@@ -1,0 +1,516 @@
+/* ========================================
+   LYERS GAME - Screen-Specific Styles
+======================================== */
+
+/* ========================================
+   Home Screen
+======================================== */
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2xl);
+  min-height: 100%;
+  padding: var(--spacing-xl);
+}
+
+.home-logo {
+  text-align: center;
+}
+
+.home-tagline {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-top: var(--spacing-md);
+}
+
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 300px;
+}
+
+.home-footer {
+  margin-top: auto;
+}
+
+.home-credits {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ========================================
+   Config Screen
+======================================== */
+
+.config-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.config-section h3 {
+  margin-bottom: var(--spacing-md);
+  font-size: 1.1rem;
+}
+
+.config-hint {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-md);
+}
+
+.round-badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--bg-card);
+  border: 1px solid var(--neon-purple);
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: var(--neon-purple);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ========================================
+   Invention Screen
+======================================== */
+
+.invention-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.question-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.question-text {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.invention-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.invention-input label {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.invention-hint {
+  text-align: center;
+  color: var(--neon-orange);
+  font-size: 0.875rem;
+}
+
+.pass-hint {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ========================================
+   Role Reveal Screen
+======================================== */
+
+.mystery-icon {
+  font-size: 5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.revealed-role {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-align: center;
+}
+
+.revealed-role__emoji {
+  font-size: 4rem;
+}
+
+.revealed-role__name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+
+.revealed-role__mission {
+  background: var(--bg-secondary);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  width: 100%;
+}
+
+.mission-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-xs);
+}
+
+.mission-text {
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.role-actions {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+}
+
+.role-warning {
+  color: var(--neon-orange);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-md);
+}
+
+/* ========================================
+   Debate Screen
+======================================== */
+
+.debate-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.timer-controls {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.debate-question {
+  margin-bottom: var(--spacing-lg);
+}
+
+.debate-answers h3 {
+  margin-bottom: var(--spacing-md);
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+/* ========================================
+   Voting Screen
+======================================== */
+
+.voting-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.role-reminder {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: var(--neon-purple);
+}
+
+.role-reminder__header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.role-reminder__emoji {
+  font-size: 1.5rem;
+}
+
+.role-reminder__name {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+}
+
+.role-reminder__mission {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.voting-question {
+  padding: var(--spacing-md);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+}
+
+.voting-choices h3 {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.answer-item--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.own-badge {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.sniper-section {
+  background: rgba(251, 191, 36, 0.1);
+}
+
+.sniper-section h3 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.sniper-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.sniper-choice {
+  flex: 1;
+  min-width: 100px;
+}
+
+.betting-section {
+  padding: var(--spacing-md);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+}
+
+.betting-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: var(--spacing-sm);
+}
+
+/* ========================================
+   Results Screen
+======================================== */
+
+.reveal-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.question-recap {
+  background: var(--bg-card);
+}
+
+.answers-reveal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.answer-reveal-item {
+  padding: var(--spacing-md);
+  background: var(--bg-card);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: var(--radius-md);
+}
+
+.answer-reveal-item--truth {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: var(--neon-green);
+  box-shadow: var(--glow-green);
+}
+
+.answer-reveal-item__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.answer-reveal-item__letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.answer-reveal-item__text {
+  font-size: 1rem;
+}
+
+.answer-reveal-item__details {
+  padding-left: calc(28px + var(--spacing-md));
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.answer-reveal-item__author {
+  margin-bottom: var(--spacing-xs);
+}
+
+.answer-reveal-item--truth .answer-reveal-item__author {
+  color: var(--neon-green);
+  font-weight: 600;
+}
+
+/* Scores Section */
+.scores-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.highlight-card {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.1));
+  border-color: var(--neon-pink);
+  text-align: center;
+}
+
+.highlight-text {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.player-results {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.player-result-card {
+  overflow: hidden;
+}
+
+.player-result-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.player-result-card__info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.player-result-card__emoji {
+  font-size: 1.5rem;
+}
+
+.player-result-card__name {
+  font-weight: 600;
+}
+
+.player-result-card__points {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.player-result-card__points.positive {
+  color: var(--neon-green);
+}
+
+.player-result-card__points.negative {
+  color: var(--neon-red);
+}
+
+.player-result-card__breakdown {
+  padding: var(--spacing-sm);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-xs) 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.breakdown-item .positive {
+  color: var(--neon-green);
+}
+
+.breakdown-item .negative {
+  color: var(--neon-red);
+}
+
+.player-result-card__role {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Leaderboard Section */
+.leaderboard-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.game-over-banner {
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+.winner-announcement {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--neon-yellow);
+}
+
+.winner-label {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.winner-name {
+  font-family: var(--font-display);
+  font-size: 2rem;
+}
+
+/* ========================================
+   Responsive adjustments
+======================================== */
+
+@media (max-width: 400px) {
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .timer__display {
+    font-size: 3.5rem !important;
+  }
+  
+  .sniper-choices {
+    flex-direction: column;
+  }
+  
+  .sniper-choice {
+    width: 100%;
+  }
+}

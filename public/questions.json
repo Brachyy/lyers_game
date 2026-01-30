@@ -1,0 +1,394 @@
+[
+  {
+    "question": "Quel est l'animal national de l'Écosse ?",
+    "answer": "La licorne"
+  },
+  {
+    "question": "Combien de temps dure en moyenne le rapport sexuel d'un éléphant ?",
+    "answer": "20 secondes"
+  },
+  {
+    "question": "Quel pourcentage de l'ADN humain est identique à celui d'une banane ?",
+    "answer": "60%"
+  },
+  {
+    "question": "Combien d'années un escargot peut-il dormir d'affilée ?",
+    "answer": "3 ans"
+  },
+  {
+    "question": "Quelle est la phobie de la peur d'avoir peur ?",
+    "answer": "La phobophobie"
+  },
+  {
+    "question": "Combien de muscles un chat a-t-il dans chaque oreille ?",
+    "answer": "32 muscles"
+  },
+  {
+    "question": "Quel est le seul aliment qui ne se périme jamais ?",
+    "answer": "Le miel"
+  },
+  {
+    "question": "Combien de fois par jour un humain pète-t-il en moyenne ?",
+    "answer": "14 fois"
+  },
+  {
+    "question": "Quel organe humain consomme le plus d'énergie ?",
+    "answer": "Le cerveau (20%)"
+  },
+  {
+    "question": "En quelle année aurait lieu la première pizza livrée dans l'espace ?",
+    "answer": "2001"
+  },
+  {
+    "question": "Combien de litres de salive produit-on dans une vie ?",
+    "answer": "25 000 litres"
+  },
+  {
+    "question": "Quel est le record du monde de la plus longue séance de hoquet ?",
+    "answer": "68 ans"
+  },
+  {
+    "question": "Quel pourcentage du corps humain est constitué d'eau ?",
+    "answer": "60%"
+  },
+  {
+    "question": "Combien de pattes a un homard ?",
+    "answer": "10 pattes"
+  },
+  {
+    "question": "De quelle couleur est le sang des pieuvres ?",
+    "answer": "Bleu"
+  },
+  {
+    "question": "Quel est le nom scientifique du chocolat ?",
+    "answer": "Theobroma cacao (nourriture des dieux)"
+  },
+  {
+    "question": "Combien de temps un koala dort-il par jour ?",
+    "answer": "22 heures"
+  },
+  {
+    "question": "Quel pays a le plus de pyramides au monde ?",
+    "answer": "Le Soudan"
+  },
+  {
+    "question": "Quelle est la durée de vie moyenne d'une mouche ?",
+    "answer": "28 jours"
+  },
+  {
+    "question": "Combien de fois le cœur bat-il en moyenne par jour ?",
+    "answer": "100 000 fois"
+  },
+  {
+    "question": "Quel animal ne peut pas vomir ?",
+    "answer": "Le cheval"
+  },
+  {
+    "question": "Combien de goûts la langue humaine peut-elle percevoir ?",
+    "answer": "5 (sucré, salé, acide, amer, umami)"
+  },
+  {
+    "question": "Quelle est la vitesse maximale d'un éternuement ?",
+    "answer": "160 km/h"
+  },
+  {
+    "question": "Quel est le plus petit os du corps humain ?",
+    "answer": "L'étrier (dans l'oreille)"
+  },
+  {
+    "question": "Combien de litres d'air respirons-nous par jour ?",
+    "answer": "11 000 litres"
+  },
+  {
+    "question": "Quel fruit porte ses graines à l'extérieur ?",
+    "answer": "La fraise"
+  },
+  {
+    "question": "Combien d'abeilles faut-il pour produire 1 kg de miel ?",
+    "answer": "40 000 abeilles"
+  },
+  {
+    "question": "Quel est le seul mammifère qui peut voler ?",
+    "answer": "La chauve-souris"
+  },
+  {
+    "question": "Combien de dents a un adulte humain ?",
+    "answer": "32 dents"
+  },
+  {
+    "question": "Quel est l'os le plus long du corps humain ?",
+    "answer": "Le fémur"
+  },
+  {
+    "question": "Quelle est la planète la plus chaude du système solaire ?",
+    "answer": "Vénus"
+  },
+  {
+    "question": "Combien d'océans y a-t-il sur Terre ?",
+    "answer": "5 océans"
+  },
+  {
+    "question": "Quel est le fleuve le plus long du monde ?",
+    "answer": "Le Nil"
+  },
+  {
+    "question": "Combien de pays y a-t-il dans le monde ?",
+    "answer": "195 pays"
+  },
+  {
+    "question": "Quel est le plus grand désert du monde ?",
+    "answer": "L'Antarctique"
+  },
+  {
+    "question": "Combien d'étoiles le drapeau américain compte-t-il ?",
+    "answer": "50 étoiles"
+  },
+  {
+    "question": "Quel est le plus petit pays du monde ?",
+    "answer": "Le Vatican"
+  },
+  {
+    "question": "Combien de langues officielles l'ONU a-t-elle ?",
+    "answer": "6 langues"
+  },
+  {
+    "question": "Quelle est la capitale de l'Australie ?",
+    "answer": "Canberra"
+  },
+  {
+    "question": "En quelle année le Titanic a-t-il coulé ?",
+    "answer": "1912"
+  },
+  {
+    "question": "Quel animal peut dormir debout ?",
+    "answer": "Le cheval"
+  },
+  {
+    "question": "Combien de pattes a une araignée ?",
+    "answer": "8 pattes"
+  },
+  {
+    "question": "Quel est le plus gros animal terrestre ?",
+    "answer": "L'éléphant d'Afrique"
+  },
+  {
+    "question": "Combien de tentacules a une pieuvre ?",
+    "answer": "8 tentacules"
+  },
+  {
+    "question": "Quel est l'animal le plus rapide du monde ?",
+    "answer": "Le faucon pèlerin (390 km/h)"
+  },
+  {
+    "question": "Combien de cervicales a une girafe ?",
+    "answer": "7 (comme l'humain)"
+  },
+  {
+    "question": "Quel animal a les empreintes digitales les plus proches de l'homme ?",
+    "answer": "Le koala"
+  },
+  {
+    "question": "Combien de temps un dauphin peut-il rester sans dormir ?",
+    "answer": "15 jours (demi-cerveau dort)"
+  },
+  {
+    "question": "Quel oiseau peut voler en arrière ?",
+    "answer": "Le colibri"
+  },
+  {
+    "question": "Combien pèse un cœur de baleine bleue ?",
+    "answer": "600 kg"
+  },
+  {
+    "question": "Quel est le seul continent sans désert ?",
+    "answer": "L'Europe"
+  },
+  {
+    "question": "Combien de temps un chameau peut-il survivre sans boire ?",
+    "answer": "2 semaines"
+  },
+  {
+    "question": "Quel est le nom du phénomène quand tu oublies ce que tu allais faire ?",
+    "answer": "L'effet de seuil"
+  },
+  {
+    "question": "Combien de muscles faut-il pour sourire ?",
+    "answer": "17 muscles"
+  },
+  {
+    "question": "Quel est le nom du bruit que fait l'estomac ?",
+    "answer": "Le borborygme"
+  },
+  {
+    "question": "En quelle année a été inventée la roue ?",
+    "answer": "3500 avant J.-C."
+  },
+  {
+    "question": "Quel pourcentage de l'océan a été exploré par l'homme ?",
+    "answer": "5%"
+  },
+  {
+    "question": "Combien de watts produit un cerveau humain ?",
+    "answer": "20 watts"
+  },
+  {
+    "question": "Quel est le fruit le plus consommé au monde ?",
+    "answer": "La banane"
+  },
+  {
+    "question": "Combien y a-t-il de touches sur un piano standard ?",
+    "answer": "88 touches"
+  },
+  {
+    "question": "Quel est le métal le plus léger ?",
+    "answer": "Le lithium"
+  },
+  {
+    "question": "Combien de couleurs un arc-en-ciel a-t-il ?",
+    "answer": "7 couleurs"
+  },
+  {
+    "question": "Quelle est la température du soleil en surface ?",
+    "answer": "5 500°C"
+  },
+  {
+    "question": "Combien de chromosomes a un humain ?",
+    "answer": "46 chromosomes"
+  },
+  {
+    "question": "Quel est le plus grand organe du corps humain ?",
+    "answer": "La peau"
+  },
+  {
+    "question": "Combien de litres de sang un adulte a-t-il ?",
+    "answer": "5 litres"
+  },
+  {
+    "question": "Quel est l'élément chimique le plus abondant dans l'univers ?",
+    "answer": "L'hydrogène"
+  },
+  {
+    "question": "Combien de satellites naturels la Terre a-t-elle ?",
+    "answer": "1 (la Lune)"
+  },
+  {
+    "question": "Quel est le plus long mot français ?",
+    "answer": "Anticonstitutionnellement (25 lettres)"
+  },
+  {
+    "question": "En quelle année l'homme a-t-il marché sur la Lune ?",
+    "answer": "1969"
+  },
+  {
+    "question": "Combien de vertèbres a la colonne vertébrale humaine ?",
+    "answer": "33 vertèbres"
+  },
+  {
+    "question": "Quel est le pays le plus grand du monde ?",
+    "answer": "La Russie"
+  },
+  {
+    "question": "Combien de fuseaux horaires la Russie compte-t-elle ?",
+    "answer": "11 fuseaux horaires"
+  },
+  {
+    "question": "Quel est le mammifère le plus bruyant ?",
+    "answer": "La baleine bleue (188 décibels)"
+  },
+  {
+    "question": "Combien de temps met la lumière du soleil pour atteindre la Terre ?",
+    "answer": "8 minutes"
+  },
+  {
+    "question": "Quel pourcentage de la surface terrestre est recouvert d'eau ?",
+    "answer": "71%"
+  },
+  {
+    "question": "Quel est l'âge de la Terre ?",
+    "answer": "4,5 milliards d'années"
+  },
+  {
+    "question": "Combien de jours la Terre met-elle pour faire le tour du Soleil ?",
+    "answer": "365,25 jours"
+  },
+  {
+    "question": "Quel animal peut régénérer son cœur ?",
+    "answer": "Le poisson-zèbre"
+  },
+  {
+    "question": "En quelle année a été fondée Google ?",
+    "answer": "1998"
+  },
+  {
+    "question": "Combien de litres d'eau faut-il pour produire 1 kg de bœuf ?",
+    "answer": "15 000 litres"
+  },
+  {
+    "question": "Quel est le nom de la phobie des trous ?",
+    "answer": "La trypophobie"
+  },
+  {
+    "question": "Combien d'os un nouveau-né a-t-il ?",
+    "answer": "270 os"
+  },
+  {
+    "question": "Quel est le record du monde de la plus longue barbe ?",
+    "answer": "5,33 mètres"
+  },
+  {
+    "question": "Quel est le sport le plus pratiqué au monde ?",
+    "answer": "Le football"
+  },
+  {
+    "question": "Combien de temps vit un globule rouge ?",
+    "answer": "120 jours"
+  },
+  {
+    "question": "Quel est le nom du premier satellite artificiel ?",
+    "answer": "Spoutnik 1"
+  },
+  {
+    "question": "Combien d'atomes y a-t-il dans le corps humain ?",
+    "answer": "7 milliards de milliards de milliards"
+  },
+  {
+    "question": "Quel est le seul fruit dont les graines sont à l'extérieur ?",
+    "answer": "La fraise"
+  },
+  {
+    "question": "Combien de tremblements de terre par an dans le monde ?",
+    "answer": "500 000"
+  },
+  {
+    "question": "Quel est le nom de la peur du nombre 13 ?",
+    "answer": "La triskaïdékaphobie"
+  },
+  {
+    "question": "En quelle année le mur de Berlin est-il tombé ?",
+    "answer": "1989"
+  },
+  {
+    "question": "Quel animal dort avec un œil ouvert ?",
+    "answer": "Le dauphin"
+  },
+  {
+    "question": "Combien de dents de lait un enfant a-t-il ?",
+    "answer": "20 dents"
+  },
+  {
+    "question": "Quel est le nom scientifique de la peur des longues mots ?",
+    "answer": "L'hippopotomonstrosesquipédaliophobie"
+  },
+  {
+    "question": "Combien de fois cligne-t-on des yeux par minute ?",
+    "answer": "15-20 fois"
+  },
+  {
+    "question": "Quel pourcentage de notre vie passons-nous à dormir ?",
+    "answer": "33%"
+  },
+  {
+    "question": "Combien de kilos de nourriture mange-t-on par an en moyenne ?",
+    "answer": "750 kg"
+  }
+]
