@@ -17,11 +17,15 @@ export class RoleRevealScreen {
   onMount() {
     // Distribuer les rôles si pas encore fait
     if (Object.keys(gameState.roles).length === 0) {
+      const trueAnswer = gameState.gameMode === 'fictionnaire'
+        ? gameState.currentWord?.definition
+        : gameState.currentQuestion?.answer;
+
       const roles = distributeRoles(
         gameState.players,
         gameState.enabledRoles,
         gameState.answers,
-        gameState.currentQuestion.answer
+        trueAnswer
       );
       
       // Assigner les rôles
@@ -68,7 +72,6 @@ export class RoleRevealScreen {
       // Écran "Passe le téléphone"
       container.innerHTML = `
         <div class="pass-screen">
-          <div class="pass-screen__emoji animate-bounce">🎭</div>
           <p class="pass-screen__title">Passe le téléphone à</p>
           <p class="pass-screen__player">${player.name}</p>
           <p class="pass-hint">Tu vas découvrir ton rôle secret !</p>
@@ -96,7 +99,7 @@ export class RoleRevealScreen {
         <div class="role-reveal__card" id="role-card">
           <div class="role-reveal__front">
             <div class="card-pattern">
-              <span class="mystery-icon">❓</span>
+              <span class="mystery-icon">?</span>
               <p>Appuie pour révéler ton rôle</p>
             </div>
           </div>
@@ -114,9 +117,9 @@ export class RoleRevealScreen {
       </div>
       
       <div class="role-actions" id="role-actions" style="display: none;">
-        <p class="role-warning">⚠️ Mémorise bien ta mission et cache l'écran !</p>
+        <p class="role-warning">Mémorise bien ta mission et cache l'écran !</p>
         <button class="btn btn--success" id="btn-understood">
-          J'ai compris, au suivant ! ✓
+          J'ai compris, au suivant !
         </button>
       </div>
     `;

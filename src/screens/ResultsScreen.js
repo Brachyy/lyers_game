@@ -58,10 +58,17 @@ export class ResultsScreen {
 
     container.innerHTML = `
       <div class="reveal-section animate-fadeIn">
-        <div class="question-recap card">
-          <p class="question-label">La question était :</p>
-          <p class="question-text">${gameState.currentQuestion.question}</p>
-        </div>
+        ${gameState.gameMode === 'fictionnaire' ? `
+          <div class="question-recap card card--glow">
+            <p class="question-label">Le mot était :</p>
+            <p class="question-text fictionnaire-word">${gameState.currentWord?.word}</p>
+          </div>
+        ` : `
+          <div class="question-recap card">
+            <p class="question-label">La question était :</p>
+            <p class="question-text">${gameState.currentQuestion?.question}</p>
+          </div>
+        `}
         
         <div class="answers-reveal" id="answers-reveal">
           ${this.results.revealedAnswers.map((answer, index) => `
@@ -74,12 +81,14 @@ export class ResultsScreen {
               </div>
               <div class="answer-reveal-item__details">
                 <div class="answer-reveal-item__author">
-                  ${answer.isTruth ? '✅ LA VRAIE RÉPONSE' : `✍️ ${answer.authorName}`}
+                  ${answer.isTruth 
+                    ? (gameState.gameMode === 'fictionnaire' ? 'LA VRAIE DÉFINITION' : 'LA VRAIE RÉPONSE') 
+                    : `${answer.authorName}`}
                 </div>
                 <div class="answer-reveal-item__votes">
                   ${answer.votesReceived > 0 
-                    ? `🗳️ ${answer.votesReceived} vote(s): ${answer.voters.join(', ')}` 
-                    : '🗳️ Aucun vote'}
+                    ? `${answer.votesReceived} vote(s): ${answer.voters.join(', ')}` 
+                    : 'Aucun vote'}
                 </div>
               </div>
             </div>
@@ -88,14 +97,14 @@ export class ResultsScreen {
         
         ${isSpeechSupported() ? `
           <button class="btn btn--secondary" id="btn-speak-truth">
-            🔊 Lire la vraie réponse
+            Lire la vraie réponse
           </button>
         ` : ''}
       </div>
       
       <div class="screen__footer">
         <button class="btn btn--primary" id="btn-show-scores">
-          Voir les scores 📊
+          Voir les scores
         </button>
       </div>
     `;
@@ -171,7 +180,7 @@ export class ResultsScreen {
                 <div class="player-result-card__breakdown">
                   ${result.breakdown.map(b => `
                     <div class="breakdown-item">
-                      <span>${b.emoji} ${b.reason}</span>
+                      <span>${b.reason}</span>
                       <span class="${b.points >= 0 ? 'positive' : 'negative'}">
                         ${b.points >= 0 ? '+' : ''}${b.points}
                       </span>
@@ -188,7 +197,7 @@ export class ResultsScreen {
       
       <div class="screen__footer">
         <button class="btn btn--primary" id="btn-leaderboard">
-          Classement général 🏆
+          Classement général
         </button>
       </div>
     `;
@@ -210,7 +219,7 @@ export class ResultsScreen {
       <div class="leaderboard-section animate-fadeIn">
         ${isGameOver ? `
           <div class="game-over-banner">
-            <h2 class="text-gradient animate-neon">🎉 FIN DE PARTIE 🎉</h2>
+            <h2 class="text-gradient animate-neon">FIN DE PARTIE</h2>
           </div>
         ` : ''}
         
@@ -218,7 +227,7 @@ export class ResultsScreen {
           ${leaderboard.map((player, index) => `
             <div class="leaderboard__item ${index === 0 ? 'leaderboard__item--first' : ''} animate-slideInLeft stagger-${index + 1}">
               <div class="leaderboard__rank">
-                ${index === 0 ? '👑' : index + 1}
+                ${index + 1}
               </div>
               <div class="leaderboard__name">${player.name}</div>
               <div class="leaderboard__score">${player.score} pts</div>
@@ -229,7 +238,7 @@ export class ResultsScreen {
         ${isGameOver && leaderboard.length > 0 ? `
           <div class="winner-announcement animate-scaleIn">
             <p class="winner-label">Le grand gagnant est...</p>
-            <p class="winner-name text-gradient">${leaderboard[0].name} 🏆</p>
+            <p class="winner-name text-gradient">${leaderboard[0].name}</p>
           </div>
         ` : ''}
       </div>
@@ -237,7 +246,7 @@ export class ResultsScreen {
       <div class="screen__footer">
         ${isGameOver ? `
           <button class="btn btn--primary" id="btn-new-game">
-            Nouvelle partie 🎰
+            Nouvelle partie
           </button>
         ` : `
           <button class="btn btn--primary" id="btn-next-round">
@@ -292,7 +301,11 @@ export class ResultsScreen {
   startNextRound() {
     gameState.nextRound();
     gameState.currentQuestion = null; // Reset pour nouvelle question
-    router.navigate('invention');
+    if (gameState.gameMode === 'fictionnaire') {
+      router.navigate('definition');
+    } else {
+      router.navigate('invention');
+    }
   }
 }
 

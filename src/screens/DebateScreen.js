@@ -61,7 +61,7 @@ export class DebateScreen {
       
       <div class="screen__footer">
         <button class="btn btn--primary" id="btn-end-debate">
-          Passer au vote 🗳️
+          Passer au vote
         </button>
       </div>
     `;
@@ -91,19 +91,26 @@ export class DebateScreen {
           <div class="timer__label">Temps restant</div>
         </div>
         <div class="timer-controls">
-          <button class="btn btn--ghost btn--icon" id="btn-pause">
-            ${this.isPaused ? '▶️' : '⏸️'}
+          <button class="btn btn--ghost" id="btn-pause">
+            ${this.isPaused ? 'Reprendre' : 'Pause'}
           </button>
         </div>
       </div>
       
-      <div class="debate-question card">
-        <p class="question-label">Question :</p>
-        <p class="question-text">${gameState.currentQuestion.question}</p>
-      </div>
+      ${gameState.gameMode === 'fictionnaire' ? `
+        <div class="debate-question card card--glow">
+          <p class="question-label">Le mot est :</p>
+          <p class="question-text fictionnaire-word">${gameState.currentWord?.word}</p>
+        </div>
+      ` : `
+        <div class="debate-question card">
+          <p class="question-label">Question :</p>
+          <p class="question-text">${gameState.currentQuestion?.question}</p>
+        </div>
+      `}
       
       <div class="debate-answers">
-        <h3>Les réponses proposées :</h3>
+        <h3>${gameState.gameMode === 'fictionnaire' ? 'Les définitions proposées :' : 'Les réponses proposées :'}</h3>
         <div class="answer-list" id="answer-list">
           ${this.shuffledAnswers.map((answer, index) => `
             <div class="answer-item" data-index="${index}">
@@ -111,7 +118,7 @@ export class DebateScreen {
               <span class="answer-item__text">${answer.text}</span>
               ${isSpeechSupported() ? `
                 <button class="btn btn--ghost btn--icon speak-btn" data-index="${index}">
-                  🔊
+                  Lire
                 </button>
               ` : ''}
             </div>
@@ -190,7 +197,7 @@ export class DebateScreen {
     
     const pauseBtn = this.screen?.querySelector('#btn-pause');
     if (pauseBtn) {
-      pauseBtn.textContent = this.isPaused ? '▶️' : '⏸️';
+      pauseBtn.textContent = this.isPaused ? 'Reprendre' : 'Pause';
     }
   }
 
@@ -224,7 +231,7 @@ export class DebateScreen {
       if (!wasPaused && !this.isEnded) {
         this.isPaused = false;
         const pauseBtn = this.screen?.querySelector('#btn-pause');
-        if (pauseBtn) pauseBtn.textContent = '⏸️';
+        if (pauseBtn) pauseBtn.textContent = 'Pause';
       }
     } catch (e) {
       console.error('Erreur lecture:', e);

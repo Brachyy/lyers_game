@@ -70,12 +70,16 @@ export function calculateResults(gameState) {
   };
   
   // Préparer les réponses avec comptage des votes
+  const truthText = gameState.gameMode === 'fictionnaire'
+    ? gameState.currentWord?.definition
+    : currentQuestion?.answer;
+
   const allAnswers = [
     ...answers,
     {
       id: 'truth',
       playerId: null,
-      text: currentQuestion.answer,
+      text: truthText,
       isTruth: true
     }
   ];

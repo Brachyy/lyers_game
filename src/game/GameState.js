@@ -17,6 +17,7 @@ class GameState {
   reset() {
     this.players = [];
     this.currentQuestion = null;
+    this.currentWord = null; // Mode Fictionnaire
     this.answers = [];
     this.roles = {};
     this.votes = {};
@@ -29,6 +30,7 @@ class GameState {
     this.enabledRoles = ['innocent'];
     this.timerDuration = 120;
     this.sipMode = false; // Mode Gorgée (drinking game)
+    this.gameMode = 'lyers'; // 'lyers' | 'fictionnaire'
   }
 
   /**
@@ -62,6 +64,7 @@ class GameState {
     saveGame({
       players: this.players,
       currentQuestion: this.currentQuestion,
+      currentWord: this.currentWord,
       answers: this.answers,
       roles: this.roles,
       votes: this.votes,
@@ -73,7 +76,8 @@ class GameState {
       totalRounds: this.totalRounds,
       enabledRoles: this.enabledRoles,
       timerDuration: this.timerDuration,
-      sipMode: this.sipMode
+      sipMode: this.sipMode,
+      gameMode: this.gameMode
     });
   }
 
@@ -186,12 +190,17 @@ class GameState {
    * Obtient toutes les réponses (incluant la vraie) mélangées
    */
   getShuffledAnswers() {
+    // En mode Fictionnaire, la "vraie réponse" est la définition du mot
+    const truthText = this.gameMode === 'fictionnaire'
+      ? this.currentWord?.definition
+      : this.currentQuestion?.answer;
+
     const allAnswers = [
       ...this.answers,
       {
         id: 'truth',
         playerId: null,
-        text: this.currentQuestion?.answer,
+        text: truthText,
         isTruth: true,
         votes: 0
       }
@@ -269,6 +278,7 @@ class GameState {
     this.sniperGuess = null;
     this.roles = {};
     this.currentPlayerIndex = 0;
+    this.currentWord = null;
     this.notify();
   }
 
@@ -307,7 +317,8 @@ class GameState {
       enabledRoles: this.enabledRoles,
       timerDuration: this.timerDuration,
       totalRounds: this.totalRounds,
-      sipMode: this.sipMode
+      sipMode: this.sipMode,
+      gameMode: this.gameMode
     });
   }
 
@@ -321,6 +332,7 @@ class GameState {
       if (config.timerDuration) this.timerDuration = config.timerDuration;
       if (config.totalRounds) this.totalRounds = config.totalRounds;
       if (config.sipMode !== undefined) this.sipMode = config.sipMode;
+      if (config.gameMode) this.gameMode = config.gameMode;
     }
   }
 

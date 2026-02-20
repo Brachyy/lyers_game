@@ -21,9 +21,15 @@
 }
 
 .home-tagline {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
+  font-size: 1.5rem;
+  color: var(--cartoon-black);
   margin-top: var(--spacing-md);
+  font-weight: 600;
+  background: white;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  border: var(--border-black);
+  box-shadow: 4px 4px 0 var(--cartoon-black);
 }
 
 .home-actions {
@@ -31,7 +37,7 @@
   flex-direction: column;
   gap: var(--spacing-md);
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
 }
 
 .home-footer {
@@ -39,9 +45,10 @@
 }
 
 .home-credits {
-  font-size: 0.875rem;
-  color: var(--text-muted);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
   text-align: center;
+  font-weight: 600;
 }
 
 /* ========================================
@@ -50,29 +57,41 @@
 
 .config-section {
   margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: white;
+  border: var(--border-black);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hard);
 }
 
 .config-section h3 {
   margin-bottom: var(--spacing-md);
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  color: var(--cartoon-black);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--bg-primary);
+  padding-bottom: var(--spacing-xs);
 }
 
 .config-hint {
-  font-size: 0.875rem;
-  color: var(--text-muted);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
   margin-bottom: var(--spacing-md);
+  font-style: italic;
 }
 
 .round-badge {
   display: inline-block;
   padding: var(--spacing-xs) var(--spacing-md);
-  background: var(--bg-card);
-  border: 1px solid var(--neon-purple);
+  background: white;
+  border: 2px solid var(--cartoon-black);
   border-radius: var(--radius-full);
   font-family: var(--font-display);
-  font-size: 0.75rem;
-  color: var(--neon-purple);
+  font-size: 0.9rem;
+  color: var(--cartoon-black);
   margin-bottom: var(--spacing-sm);
+  box-shadow: 2px 2px 0 var(--cartoon-black);
+  font-weight: 800;
 }
 
 /* ========================================
@@ -86,16 +105,25 @@
 }
 
 .question-label {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
+  font-size: 1rem;
+  color: var(--cartoon-black);
   margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .question-text {
-  font-size: 1.25rem;
-  color: var(--text-primary);
-  font-weight: 600;
-  line-height: 1.4;
+  font-size: 1.5rem;
+  color: var(--cartoon-blue);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.fictionnaire-word {
+  /* Fix: Reduce shadow offset for better readability */
+  text-shadow: 1px 1px 0 var(--cartoon-black);
+  letter-spacing: 0.05em;
+  font-size: 2rem;
 }
 
 .invention-input {
@@ -105,20 +133,27 @@
 }
 
 .invention-input label {
-  font-weight: 500;
-  color: var(--text-secondary);
+  font-weight: 700;
+  color: var(--cartoon-black);
+  font-size: 1.1rem;
 }
 
 .invention-hint {
   text-align: center;
-  color: var(--neon-orange);
-  font-size: 0.875rem;
+  color: var(--cartoon-orange);
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: white;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--cartoon-orange);
 }
 
 .pass-hint {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: var(--spacing-lg);
+  font-weight: 500;
 }
 
 /* ========================================
@@ -126,8 +161,9 @@
 ======================================== */
 
 .mystery-icon {
-  font-size: 5rem;
-  animation: pulse 2s ease-in-out infinite;
+  font-size: 6rem;
+  animation: bounce 2s ease-in-out infinite;
+  filter: drop-shadow(4px 4px 0 rgba(0,0,0,0.2));
 }
 
 .revealed-role {
@@ -139,31 +175,39 @@
 }
 
 .revealed-role__emoji {
-  font-size: 4rem;
+  font-size: 5rem;
+  filter: drop-shadow(4px 4px 0 rgba(0,0,0,0.2));
 }
 
 .revealed-role__name {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 2rem;
+  color: var(--cartoon-black);
+  text-shadow: 2px 2px 0 white;
 }
 
 .revealed-role__mission {
-  background: var(--bg-secondary);
+  background: white;
   padding: var(--spacing-md);
   border-radius: var(--radius-md);
   width: 100%;
+  border: var(--border-black);
+  box-shadow: var(--shadow-hard-sm);
 }
 
 .mission-label {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .mission-text {
-  font-size: 1rem;
-  color: var(--text-primary);
-  line-height: 1.5;
+  font-size: 1.2rem;
+  color: var(--cartoon-black);
+  line-height: 1.4;
+  font-weight: 600;
 }
 
 .role-actions {
@@ -172,9 +216,14 @@
 }
 
 .role-warning {
-  color: var(--neon-orange);
-  font-size: 0.9rem;
+  color: var(--cartoon-red);
+  font-size: 1rem;
   margin-bottom: var(--spacing-md);
+  font-weight: 700;
+  background: white;
+  padding: 8px;
+  border: 2px solid var(--cartoon-red);
+  border-radius: var(--radius-md);
 }
 
 /* ========================================
@@ -200,8 +249,9 @@
 
 .debate-answers h3 {
   margin-bottom: var(--spacing-md);
-  font-size: 1rem;
-  color: var(--text-secondary);
+  font-size: 1.1rem;
+  color: var(--cartoon-black);
+  text-transform: uppercase;
 }
 
 /* ========================================
@@ -215,8 +265,9 @@
 }
 
 .role-reminder {
-  background: rgba(139, 92, 246, 0.1);
-  border-color: var(--neon-purple);
+  background: #F3E5F5;
+  border-color: var(--cartoon-purple);
+  box-shadow: 4px 4px 0 var(--cartoon-purple);
 }
 
 .role-reminder__header {
@@ -227,29 +278,33 @@
 }
 
 .role-reminder__emoji {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .role-reminder__name {
   font-family: var(--font-display);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  color: var(--cartoon-purple);
 }
 
 .role-reminder__mission {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-secondary);
 }
 
 .voting-question {
   padding: var(--spacing-md);
-  background: var(--bg-card);
+  background: white;
   border-radius: var(--radius-md);
+  border: var(--border-black);
+  box-shadow: var(--shadow-hard-sm);
 }
 
 .voting-choices h3 {
-  font-size: 1rem;
-  color: var(--text-secondary);
+  font-size: 1.1rem;
+  color: var(--cartoon-black);
   margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
 }
 
 .answer-item--disabled {
@@ -258,17 +313,21 @@
 }
 
 .own-badge {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   margin-left: auto;
+  font-weight: 700;
 }
 
 .sniper-section {
-  background: rgba(251, 191, 36, 0.1);
+  background: #FFF9C4;
+  border-color: var(--cartoon-yellow);
+  box-shadow: 4px 4px 0 var(--cartoon-yellow);
 }
 
 .sniper-section h3 {
   margin-bottom: var(--spacing-sm);
+  color: #F57F17;
 }
 
 .sniper-choices {
@@ -285,14 +344,17 @@
 
 .betting-section {
   padding: var(--spacing-md);
-  background: var(--bg-card);
+  background: white;
   border-radius: var(--radius-md);
+  border: var(--border-black);
+  box-shadow: var(--shadow-hard);
 }
 
 .betting-hint {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   margin-top: var(--spacing-sm);
+  font-style: italic;
 }
 
 /* ========================================
@@ -306,7 +368,9 @@
 }
 
 .question-recap {
-  background: var(--bg-card);
+  background: white;
+  border: var(--border-black);
+  box-shadow: var(--shadow-hard);
 }
 
 .answers-reveal {
@@ -317,15 +381,16 @@
 
 .answer-reveal-item {
   padding: var(--spacing-md);
-  background: var(--bg-card);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: white;
+  border: var(--border-black);
   border-radius: var(--radius-md);
+  box-shadow: var(--shadow-hard-sm);
 }
 
 .answer-reveal-item--truth {
-  background: rgba(16, 185, 129, 0.1);
-  border-color: var(--neon-green);
-  box-shadow: var(--glow-green);
+  background: #E8F5E9;
+  border-color: var(--cartoon-green);
+  box-shadow: 4px 4px 0 var(--cartoon-green);
 }
 
 .answer-reveal-item__header {
@@ -339,32 +404,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  background: var(--gradient-primary);
-  border-radius: var(--radius-full);
+  width: 32px;
+  height: 32px;
+  background: var(--cartoon-purple);
+  border: 2px solid var(--cartoon-black);
+  border-radius: 50%;
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: white;
   flex-shrink: 0;
 }
 
 .answer-reveal-item__text {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .answer-reveal-item__details {
-  padding-left: calc(28px + var(--spacing-md));
-  font-size: 0.875rem;
+  padding-left: calc(32px + var(--spacing-md));
+  font-size: 0.95rem;
   color: var(--text-secondary);
 }
 
 .answer-reveal-item__author {
   margin-bottom: var(--spacing-xs);
+  font-weight: 600;
 }
 
 .answer-reveal-item--truth .answer-reveal-item__author {
-  color: var(--neon-green);
-  font-weight: 600;
+  color: var(--cartoon-green);
+  font-weight: 800;
 }
 
 /* Scores Section */
@@ -381,14 +451,18 @@
 }
 
 .highlight-card {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.1));
-  border-color: var(--neon-pink);
+  background: white;
+  border: var(--border-black);
+  box-shadow: var(--shadow-hard-sm);
   text-align: center;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
 }
 
 .highlight-text {
-  color: var(--text-primary);
-  font-weight: 500;
+  color: var(--cartoon-black);
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .player-results {
@@ -399,6 +473,10 @@
 
 .player-result-card {
   overflow: hidden;
+  background: white;
+  border: var(--border-black);
+  border-radius: var(--radius-md);
+  box-shadow: 4px 4px 0 var(--cartoon-black);
 }
 
 .player-result-card__header {
@@ -406,6 +484,9 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background: var(--bg-primary);
+  border-bottom: var(--border-black);
 }
 
 .player-result-card__info {
@@ -415,52 +496,56 @@
 }
 
 .player-result-card__emoji {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 .player-result-card__name {
-  font-weight: 600;
+  font-weight: 800;
+  font-size: 1.1rem;
 }
 
 .player-result-card__points {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 900;
 }
 
 .player-result-card__points.positive {
-  color: var(--neon-green);
+  color: var(--cartoon-green);
 }
 
 .player-result-card__points.negative {
-  color: var(--neon-red);
+  color: var(--cartoon-red);
 }
 
 .player-result-card__breakdown {
-  padding: var(--spacing-sm);
-  background: var(--bg-secondary);
-  border-radius: var(--radius-sm);
-  margin-bottom: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background: white;
 }
 
 .breakdown-item {
   display: flex;
   justify-content: space-between;
-  padding: var(--spacing-xs) 0;
-  font-size: 0.875rem;
+  padding: 4px 0;
+  font-size: 0.95rem;
   color: var(--text-secondary);
+  font-weight: 500;
 }
 
 .breakdown-item .positive {
-  color: var(--neon-green);
+  color: var(--cartoon-green);
+  font-weight: 700;
 }
 
 .breakdown-item .negative {
-  color: var(--neon-red);
+  color: var(--cartoon-red);
+  font-weight: 700;
 }
 
 .player-result-card__role {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
+  font-style: italic;
 }
 
 /* Leaderboard Section */
@@ -478,19 +563,25 @@
 .winner-announcement {
   text-align: center;
   padding: var(--spacing-xl);
-  background: var(--bg-card);
+  background: white;
   border-radius: var(--radius-lg);
-  border: 2px solid var(--neon-yellow);
+  border: 4px solid var(--cartoon-black);
+  box-shadow: 8px 8px 0 var(--cartoon-yellow);
 }
 
 .winner-label {
   color: var(--text-secondary);
   margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .winner-name {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 2.5rem;
+  color: var(--cartoon-black);
+  text-shadow: 2px 2px 0 var(--cartoon-yellow);
 }
 
 /* ========================================
@@ -513,4 +604,97 @@
   .sniper-choice {
     width: 100%;
   }
+}
+
+/* ========================================
+   Mode Selection (Home)
+======================================== */
+
+.mode-selection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.mode-selection__title {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--cartoon-black);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.btn--mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: white;
+  border: var(--border-black);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-bounce);
+  cursor: pointer;
+  text-align: center;
+  box-shadow: var(--shadow-hard);
+}
+
+.btn--mode:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-hard-lg);
+}
+
+.mode-btn--lyers:hover {
+  background: #FCE4EC;
+  border-color: var(--cartoon-pink);
+}
+
+.mode-btn--fictionnaire:hover {
+  background: #E0F7FA;
+  border-color: var(--cartoon-teal);
+}
+
+.mode-btn__emoji {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.mode-btn__name {
+  font-weight: 900;
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+  color: var(--cartoon-black);
+}
+
+.mode-btn__desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+/* ========================================
+   Mode Badge (Config)
+======================================== */
+
+.mode-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-top: var(--spacing-xs);
+  border: 2px solid var(--cartoon-black);
+  box-shadow: 2px 2px 0 var(--cartoon-black);
+}
+
+.mode-badge--lyers {
+  color: var(--cartoon-black);
+  background: var(--cartoon-pink);
+}
+
+.mode-badge--fictionnaire {
+  color: var(--cartoon-black);
+  background: var(--cartoon-teal);
 }

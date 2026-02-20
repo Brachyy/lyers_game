@@ -16,6 +16,7 @@ import router from './router.js';
 import HomeScreen from './screens/HomeScreen.js';
 import ConfigScreen from './screens/ConfigScreen.js';
 import InventionScreen from './screens/InventionScreen.js';
+import DefinitionScreen from './screens/DefinitionScreen.js';
 import RoleRevealScreen from './screens/RoleRevealScreen.js';
 import DebateScreen from './screens/DebateScreen.js';
 import VotingScreen from './screens/VotingScreen.js';
@@ -42,6 +43,7 @@ async function init() {
   router.register('home', HomeScreen);
   router.register('config', ConfigScreen);
   router.register('invention', InventionScreen);
+  router.register('definition', DefinitionScreen);
   router.register('roles', RoleRevealScreen);
   router.register('debate', DebateScreen);
   router.register('voting', VotingScreen);

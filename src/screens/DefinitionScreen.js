@@ -1,45 +1,45 @@
 /**
- * LYERS GAME - Invention Screen
- * Phase d'invention des réponses (Pass & Play)
+ * LYERS GAME - Definition Screen (Mode Fictionnaire)
+ * Phase d'invention des définitions (Pass & Play)
  */
 
 import router from '../router.js';
 import gameState from '../game/GameState.js';
 import { confirmVibration, tapVibration } from '../utils/haptics.js';
 
-export class InventionScreen {
+export class DefinitionScreen {
   constructor(data = {}) {
     this.data = data;
-    this.questions = [];
-    this.showingQuestion = false;
-    this.currentAnswer = '';
+    this.words = [];
+    this.showingWord = false;
+    this.currentDefinition = '';
   }
 
-  async loadQuestions() {
+  async loadWords() {
     try {
       const baseUrl = import.meta.env.BASE_URL || '/';
-      const response = await fetch(`${baseUrl}questions.json`);
-      this.questions = await response.json();
+      const response = await fetch(`${baseUrl}fictionnaire_words.json`);
+      this.words = await response.json();
     } catch (e) {
-      console.error('Erreur chargement questions:', e);
-      this.questions = [
-        { 
-          question: "Quel est le seul aliment qui ne périme jamais ?", 
-          answer: "Le miel" 
+      console.error('Erreur chargement mots:', e);
+      this.words = [
+        {
+          word: "Xylogratte",
+          definition: "Instrument médiéval utilisé pour graver des motifs sur le bois"
         }
       ];
     }
   }
 
   async onMount() {
-    await this.loadQuestions();
-    
-    // Sélectionner une question aléatoire si pas déjà fait
-    if (!gameState.currentQuestion) {
-      const randomIndex = Math.floor(Math.random() * this.questions.length);
-      gameState.setQuestion(this.questions[randomIndex]);
+    await this.loadWords();
+
+    // Sélectionner un mot aléatoire si pas déjà fait
+    if (!gameState.currentWord) {
+      const randomIndex = Math.floor(Math.random() * this.words.length);
+      gameState.update({ currentWord: this.words[randomIndex] });
     }
-    
+
     this.updateDisplay();
   }
 
@@ -51,10 +51,10 @@ export class InventionScreen {
         <div class="round-badge">
           Manche ${gameState.round} / ${gameState.totalRounds}
         </div>
-        <h2 class="text-gradient">Phase d'Invention</h2>
+        <h2 class="text-gradient">Mode Fictionnaire</h2>
       </div>
       
-      <div class="screen__content" id="invention-content">
+      <div class="screen__content" id="definition-content">
         <!-- Dynamic content -->
       </div>
     `;
@@ -64,15 +64,15 @@ export class InventionScreen {
   }
 
   updateDisplay() {
-    const container = this.screen.querySelector('#invention-content');
+    const container = this.screen.querySelector('#definition-content');
     const player = gameState.getCurrentPlayer();
-    
+
     if (!player) {
-      this.finishInventionPhase();
+      this.finishDefinitionPhase();
       return;
     }
 
-    if (!this.showingQuestion) {
+    if (!this.showingWord) {
       // Écran "Passe le téléphone"
       container.innerHTML = `
         <div class="pass-screen">
@@ -86,30 +86,33 @@ export class InventionScreen {
 
       container.querySelector('#btn-ready').addEventListener('click', () => {
         confirmVibration();
-        this.showingQuestion = true;
+        this.showingWord = true;
         this.updateDisplay();
       });
     } else {
-      // Écran de saisie de la réponse
+      // Écran de saisie de la définition
       container.innerHTML = `
         <div class="invention-form animate-fadeIn">
           <div class="card card--glow">
-            <h3 class="question-label">La question est :</h3>
-            <p class="question-text">${gameState.currentQuestion.question}</p>
+            <h3 class="question-label">Le mot est :</h3>
+            <p class="question-text fictionnaire-word">${gameState.currentWord.word}</p>
           </div>
           
           <div class="invention-input">
-            <label for="answer-input">Invente une fausse réponse crédible :</label>
+            <label for="definition-input">Invente une définition crédible ou hilarante :</label>
             <textarea 
-              id="answer-input" 
+              id="definition-input" 
               class="input textarea" 
-              placeholder="Ta réponse inventée..."
+              placeholder="Ta définition inventée..."
               rows="3"
-            >${this.currentAnswer}</textarea>
+            >${this.currentDefinition}</textarea>
           </div>
           
           <p class="invention-hint">
-            Ne montre pas ta réponse aux autres !
+            Ne montre pas ta définition aux autres !
+          </p>
+          <p class="invention-hint" style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9em;">
+            Astuce : Formule ta phrase comme dans un dictionnaire (ex: "Petit outil servant à..."). Évite de commencer par "C'est un..." et ne mets pas de point à la fin.
           </p>
         </div>
       `;
@@ -117,17 +120,17 @@ export class InventionScreen {
       container.innerHTML += `
         <div class="screen__footer">
           <button class="btn btn--success" id="btn-submit" disabled>
-            Valider ma réponse
+            Valider ma définition
           </button>
         </div>
       `;
 
-      const input = container.querySelector('#answer-input');
+      const input = container.querySelector('#definition-input');
       const submitBtn = container.querySelector('#btn-submit');
 
       input.addEventListener('input', (e) => {
-        this.currentAnswer = e.target.value;
-        submitBtn.disabled = this.currentAnswer.trim().length < 2;
+        this.currentDefinition = e.target.value;
+        submitBtn.disabled = this.currentDefinition.trim().length < 2;
       });
 
       input.addEventListener('focus', () => {
@@ -136,36 +139,36 @@ export class InventionScreen {
 
       submitBtn.addEventListener('click', () => {
         confirmVibration();
-        this.submitAnswer();
+        this.submitDefinition();
       });
     }
   }
 
-  submitAnswer() {
+  submitDefinition() {
     const player = gameState.getCurrentPlayer();
-    
-    // Enregistrer la réponse
-    gameState.addAnswer(player.id, this.currentAnswer.trim());
-    
+
+    // Enregistrer la définition comme une "réponse"
+    gameState.addAnswer(player.id, this.currentDefinition.trim());
+
     // Réinitialiser pour le prochain joueur
-    this.currentAnswer = '';
-    this.showingQuestion = false;
-    
+    this.currentDefinition = '';
+    this.showingWord = false;
+
     // Passer au joueur suivant
     const hasMorePlayers = gameState.nextPlayer();
-    
+
     if (hasMorePlayers) {
       this.updateDisplay();
     } else {
-      this.finishInventionPhase();
+      this.finishDefinitionPhase();
     }
   }
 
-  finishInventionPhase() {
+  finishDefinitionPhase() {
     // Passer à la phase de distribution des rôles
     gameState.currentPlayerIndex = 0;
     router.navigate('roles');
   }
 }
 
-export default InventionScreen;
+export default DefinitionScreen;

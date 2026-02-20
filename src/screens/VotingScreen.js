@@ -57,7 +57,6 @@ export class VotingScreen {
       // Écran "Passe le téléphone"
       container.innerHTML = `
         <div class="pass-screen">
-          <div class="pass-screen__emoji animate-bounce">🗳️</div>
           <p class="pass-screen__title">Passe le téléphone à</p>
           <p class="pass-screen__player">${player.name}</p>
           <p class="pass-hint">C'est l'heure de voter !</p>
@@ -101,15 +100,22 @@ export class VotingScreen {
           <p class="role-reminder__mission">${roleData?.mission || 'Vote pour la vraie réponse !'}</p>
         </div>
         
-        <!-- Question -->
-        <div class="voting-question">
-          <p class="question-label">Question :</p>
-          <p class="question-text">${gameState.currentQuestion.question}</p>
-        </div>
+        <!-- Question / Mot -->
+        ${gameState.gameMode === 'fictionnaire' ? `
+          <div class="voting-question card--glow">
+            <p class="question-label">Le mot est :</p>
+            <p class="question-text fictionnaire-word">${gameState.currentWord?.word}</p>
+          </div>
+        ` : `
+          <div class="voting-question">
+            <p class="question-label">Question :</p>
+            <p class="question-text">${gameState.currentQuestion?.question}</p>
+          </div>
+        `}
         
         <!-- Choix des réponses -->
         <div class="voting-choices">
-          <h3>Choisis une réponse :</h3>
+          <h3>${gameState.gameMode === 'fictionnaire' ? 'Quelle est la vraie définition ?' : 'Choisis une réponse :'}</h3>
           <div class="answer-list" id="answer-list">
             ${this.shuffledAnswers.map((answer, index) => {
               // Un joueur ne peut pas voter pour sa propre réponse
@@ -131,7 +137,7 @@ export class VotingScreen {
         ${isSniper && avocatInGame ? `
           <!-- Section Sniper -->
           <div class="sniper-section card" style="border-color: var(--neon-yellow);">
-            <h3>🎯 Mission Sniper</h3>
+            <h3>Mission Sniper</h3>
             <p>Qui penses-tu être l'Avocat du Diable ?</p>
             <div class="sniper-choices" id="sniper-choices">
               ${gameState.players.filter(p => p.id !== player.id).map(p => `
@@ -147,7 +153,7 @@ export class VotingScreen {
       
       <div class="screen__footer">
         <button class="btn btn--success" id="btn-submit-vote" ${!this.selectedAnswerId ? 'disabled' : ''}>
-          Confirmer mon vote ✓
+          Confirmer mon vote
         </button>
       </div>
     `;

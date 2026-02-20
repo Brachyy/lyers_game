@@ -25,12 +25,15 @@ export class ConfigScreen {
       <div class="screen__header animate-slideDown">
         <button class="btn btn--ghost" id="btn-back">← Retour</button>
         <h2 class="text-gradient">Configuration</h2>
+        <div class="mode-badge ${gameState.gameMode === 'fictionnaire' ? 'mode-badge--fictionnaire' : 'mode-badge--lyers'}">
+          ${gameState.gameMode === 'fictionnaire' ? 'Fictionnaire' : 'Lyers'}
+        </div>
       </div>
       
       <div class="screen__content">
         <!-- Section Joueurs -->
         <section class="config-section animate-slideUp stagger-1">
-          <h3>👥 Joueurs</h3>
+          <h3>Joueurs</h3>
           <div class="player-list" id="player-list">
             <!-- Players will be added dynamically -->
           </div>
@@ -41,7 +44,7 @@ export class ConfigScreen {
         
         <!-- Section Rôles -->
         <section class="config-section animate-slideUp stagger-2">
-          <h3>🎭 Rôles Actifs</h3>
+          <h3>Rôles Actifs</h3>
           <p class="config-hint">Sélectionne les rôles qui seront distribués aléatoirement</p>
           <div class="role-grid" id="role-grid">
             <!-- Roles will be added dynamically -->
@@ -50,7 +53,7 @@ export class ConfigScreen {
         
         <!-- Section Timer -->
         <section class="config-section animate-slideUp stagger-3">
-          <h3>⏱️ Durée du débat</h3>
+          <h3>Durée du débat</h3>
           <div class="slider-group">
             <div class="slider-group__header">
               <span>Temps de discussion</span>
@@ -63,7 +66,7 @@ export class ConfigScreen {
         
         <!-- Section Manches -->
         <section class="config-section animate-slideUp stagger-4">
-          <h3>🔢 Nombre de manches</h3>
+          <h3>Nombre de manches</h3>
           <div class="slider-group">
             <div class="slider-group__header">
               <span>Manches à jouer</span>
@@ -76,21 +79,20 @@ export class ConfigScreen {
         
         <!-- Section Mode Gorgée -->
         <section class="config-section animate-slideUp stagger-5">
-          <h3>🍺 Mode Gorgée</h3>
+          <h3>Mode Gorgée</h3>
           <p class="config-hint">Active le mode drinking game : les points deviennent des gorgées !</p>
           <div class="sip-mode-toggle">
             <label class="toggle-switch">
               <input type="checkbox" id="sip-mode-toggle" ${gameState.sipMode ? 'checked' : ''}>
               <span class="toggle-slider"></span>
             </label>
-            <span class="toggle-label" id="sip-mode-label">${gameState.sipMode ? '🍻 Mode Gorgée activé' : '📊 Mode Points'}</span>
+            <span class="toggle-label" id="sip-mode-label">${gameState.sipMode ? 'Mode Gorgée activé' : 'Mode Points'}</span>
           </div>
         </section>
       </div>
       
       <div class="screen__footer">
         <button class="btn btn--primary" id="btn-start" disabled>
-          <span>🚀</span>
           Lancer la partie
         </button>
       </div>
@@ -142,7 +144,7 @@ export class ConfigScreen {
     sipToggle.addEventListener('change', (e) => {
       tapVibration();
       gameState.setSipMode(e.target.checked);
-      sipLabel.textContent = e.target.checked ? '🍻 Mode Gorgée activé' : '📊 Mode Points';
+      sipLabel.textContent = e.target.checked ? 'Mode Gorgée activé' : 'Mode Points';
     });
 
     // Lancer la partie
@@ -319,8 +321,12 @@ export class ConfigScreen {
     gameState.votes = {};
     gameState.currentPlayerIndex = 0;
     
-    // Aller à l'écran d'invention
-    router.navigate('invention');
+    // Aller au bon écran selon le mode
+    if (gameState.gameMode === 'fictionnaire') {
+      router.navigate('definition');
+    } else {
+      router.navigate('invention');
+    }
   }
 }
 
